@@ -88,6 +88,11 @@ MAT MAT::operator-(const mat & m) const {
 }
 
 HEADER
+void MAT::operator=( const data_type & s ) {
+    for(int i =0; i < N; ++i){ d[i] = s; }
+}
+
+HEADER
 MATt MAT::getTranspose() {
     MATt mt;
     for(int i = 0; i < R; ++i){

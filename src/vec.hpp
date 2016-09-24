@@ -37,6 +37,7 @@ public:
     vec operator-( const data_type & d ) const;
     vec operator*( const data_type & d ) const;
     vec operator/( const data_type & d ) const;
+    void operator=( const data_type & s );
     
     // print method
     void print() const;

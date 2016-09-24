@@ -85,6 +85,10 @@ public:
         return vec(d[0]/mag,d[1]/mag,d[2]/mag);
     }
     
+    void operator=( const data_type & s ) {
+        d[0] = d[1] = d[2] = s;
+    }
+    
     vec operator+( const vec & v ) const {
         return vec(d[0] + v.d[0], d[1] + v.d[1], d[2] + v.d[2]);
     }

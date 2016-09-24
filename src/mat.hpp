@@ -48,6 +48,7 @@ public:
     
     mat operator+(const mat & m) const;
     mat operator-(const mat & m) const;
+    void operator=( const data_type & s );
     mat<C,R,data_type> getTranspose();
     
     int rows() const;

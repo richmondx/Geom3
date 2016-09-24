@@ -64,6 +64,11 @@ VEC VEC::getNormal() const {
     return out;
 }
 
+HEADER
+void VEC::operator=( const data_type & s ) {
+    for(int i =0 ;i < D; ++i){ d[i] = s; }
+}
+
 // specify element-wise math operators
 HEADER
 VEC VEC::operator+( const vec & v ) const{
