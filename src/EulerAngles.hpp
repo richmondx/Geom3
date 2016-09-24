@@ -32,7 +32,7 @@
 
 #include <stdio.h>
 #include "vec3.hpp"
-typedef la::FastMat<double, 3, 3> mat3;
+//typedef la::FastMat<double, 3, 3> mat3;
 
 
 class EulerAngles {
@@ -43,8 +43,8 @@ public:
     EulerAngles(double a1, double a2, double a3);
     double & operator[](int i);
     const double & operator[](int i) const;
-    mat3 getRotationMatrix() const;
-    vec3 operator*( const vec3 & input ) const;
+    //mat3 getRotationMatrix() const;
+    //vec3 operator*( const vec3 & input ) const;
     
 public:
     double angles[3];

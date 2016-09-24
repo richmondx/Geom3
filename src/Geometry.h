@@ -9,6 +9,8 @@
 #ifndef Geometry_h
 #define Geometry_h
 
+#include "vec.hpp"
 #include "vec3.hpp"
+#include "Quaternion.hpp"
 
 #endif /* Geometry_h */
