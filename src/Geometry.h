@@ -9,7 +9,7 @@
 #ifndef Geometry_h
 #define Geometry_h
 
-#include "vec.hpp"
+#include "math_bundle.hpp"
 #include "vec3.hpp"
 #include "Quaternion.hpp"
 

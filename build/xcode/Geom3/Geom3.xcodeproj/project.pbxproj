@@ -36,6 +36,10 @@
 		ADA61A451D9665AE001881EE /* vec_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vec_impl.hpp; path = ../../../../src/vec_impl.hpp; sourceTree = "<group>"; };
 		ADA61A461D9665AE001881EE /* vec.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vec.hpp; path = ../../../../src/vec.hpp; sourceTree = "<group>"; };
 		ADA61A4A1D966BC1001881EE /* vec3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = vec3.hpp; path = ../../../../src/vec3.hpp; sourceTree = "<group>"; };
+		ADA61A5E1D96F247001881EE /* mat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mat.hpp; path = ../../../../src/mat.hpp; sourceTree = "<group>"; };
+		ADA61A5F1D96F70D001881EE /* mat_impl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mat_impl.hpp; path = ../../../../src/mat_impl.hpp; sourceTree = "<group>"; };
+		ADA61A611D96FC1F001881EE /* math_operators.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = math_operators.hpp; path = ../../../../src/math_operators.hpp; sourceTree = "<group>"; };
+		ADA61A631D96FFD2001881EE /* math_bundle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = math_bundle.hpp; path = ../../../../src/math_bundle.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,16 +81,84 @@
 		ADA61A3F1D96659D001881EE /* src */ = {
 			isa = PBXGroup;
 			children = (
-				ADA61A401D9665AE001881EE /* EulerAngles.cpp */,
-				ADA61A411D9665AE001881EE /* EulerAngles.hpp */,
+				ADA61A621D96FFB9001881EE /* bundle */,
+				ADA61A5C1D96F208001881EE /* mat */,
+				ADA61A591D96F1E0001881EE /* vec */,
+				ADA61A601D96FBFD001881EE /* operators */,
+				ADA61A5A1D96F1EE001881EE /* 3d */,
+				ADA61A571D96F1B8001881EE /* Attitude Representation */,
 				ADA61A421D9665AE001881EE /* Geometry.h */,
-				ADA61A431D9665AE001881EE /* Quaternion_Impl.hpp */,
-				ADA61A441D9665AE001881EE /* Quaternion.hpp */,
-				ADA61A451D9665AE001881EE /* vec_impl.hpp */,
-				ADA61A461D9665AE001881EE /* vec.hpp */,
-				ADA61A4A1D966BC1001881EE /* vec3.hpp */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		ADA61A561D96F1B0001881EE /* EulerAngles */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A401D9665AE001881EE /* EulerAngles.cpp */,
+				ADA61A411D9665AE001881EE /* EulerAngles.hpp */,
+			);
+			name = EulerAngles;
+			sourceTree = "<group>";
+		};
+		ADA61A571D96F1B8001881EE /* Attitude Representation */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A581D96F1D4001881EE /* Quaternion */,
+				ADA61A561D96F1B0001881EE /* EulerAngles */,
+			);
+			name = "Attitude Representation";
+			sourceTree = "<group>";
+		};
+		ADA61A581D96F1D4001881EE /* Quaternion */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A431D9665AE001881EE /* Quaternion_Impl.hpp */,
+				ADA61A441D9665AE001881EE /* Quaternion.hpp */,
+			);
+			name = Quaternion;
+			sourceTree = "<group>";
+		};
+		ADA61A591D96F1E0001881EE /* vec */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A451D9665AE001881EE /* vec_impl.hpp */,
+				ADA61A461D9665AE001881EE /* vec.hpp */,
+			);
+			name = vec;
+			sourceTree = "<group>";
+		};
+		ADA61A5A1D96F1EE001881EE /* 3d */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A4A1D966BC1001881EE /* vec3.hpp */,
+			);
+			name = 3d;
+			sourceTree = "<group>";
+		};
+		ADA61A5C1D96F208001881EE /* mat */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A5E1D96F247001881EE /* mat.hpp */,
+				ADA61A5F1D96F70D001881EE /* mat_impl.hpp */,
+			);
+			name = mat;
+			sourceTree = "<group>";
+		};
+		ADA61A601D96FBFD001881EE /* operators */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A611D96FC1F001881EE /* math_operators.hpp */,
+			);
+			name = operators;
+			sourceTree = "<group>";
+		};
+		ADA61A621D96FFB9001881EE /* bundle */ = {
+			isa = PBXGroup;
+			children = (
+				ADA61A631D96FFD2001881EE /* math_bundle.hpp */,
+			);
+			name = bundle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +351,7 @@
 				ADA61A3E1D966599001881EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

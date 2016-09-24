@@ -29,14 +29,14 @@ public:
     vec getNormal() const;
     
     // specify element-wise math operators
-    vec operator+( const vec & v );
-    vec operator-( const vec & v );
-    vec operator*( const vec & v );
-    vec operator/( const vec & v );
-    vec operator+( const data_type & d );
-    vec operator-( const data_type & d );
-    vec operator*( const data_type & d );
-    vec operator/( const data_type & d );
+    vec operator+( const vec & v ) const;
+    vec operator-( const vec & v ) const;
+    vec operator*( const vec & v ) const;
+    vec operator/( const vec & v ) const;
+    vec operator+( const data_type & d ) const;
+    vec operator-( const data_type & d ) const;
+    vec operator*( const data_type & d ) const;
+    vec operator/( const data_type & d ) const;
     
     // print method
     void print() const;

@@ -10,15 +10,20 @@
 #include "vec3.hpp"
 #include "Quaternion.hpp"
 
-typedef vec3<> v3;
+typedef mat<3,3> mat3;
+typedef vec<3> v3;
 typedef Quaternion<> quat;
 
 int main(int argc, const char * argv[]) {
     
     v3 v(1,0,0);
     quat q(3.14/6.0,v);
+    mat3 m;
+    v3 v2 = m*v + 2.0;
+    m.print();
     q.print();
     v.print();
+    v2.print();
     
     return 0;
 }

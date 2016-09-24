@@ -48,7 +48,7 @@ template<typename data_type = double>
 class Quaternion {
 public:
     
-    typedef vec3<data_type> vec3;
+    typedef vec<3,data_type> vec3;
     
     // Constructor
     Quaternion();

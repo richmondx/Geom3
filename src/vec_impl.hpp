@@ -66,49 +66,49 @@ VEC VEC::getNormal() const {
 
 // specify element-wise math operators
 HEADER
-VEC VEC::operator+( const vec & v ){
+VEC VEC::operator+( const vec & v ) const{
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]+v.d[i]; }
     return out;
 }
 HEADER
-VEC VEC::operator-( const vec & v ) {
+VEC VEC::operator-( const vec & v ) const {
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]-v.d[i]; }
     return out;
 }
 HEADER
-VEC VEC::operator*( const vec & v ) {
+VEC VEC::operator*( const vec & v ) const {
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]*v.d[i]; }
     return out;
 }
 HEADER
-VEC VEC::operator/( const vec & v ) {
+VEC VEC::operator/( const vec & v ) const{
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]/v.d[i]; }
     return out;
 }
 HEADER
-VEC VEC::operator+( const data_type & d_ ) {
+VEC VEC::operator+( const data_type & d_ ) const {
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]+d_; }
     return out;
 }
 HEADER
-VEC VEC::operator-( const data_type & d_ ) {
+VEC VEC::operator-( const data_type & d_ ) const{
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]-d_; }
     return out;
 }
 HEADER
-VEC VEC::operator*( const data_type & d_ ) {
+VEC VEC::operator*( const data_type & d_ ) const {
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]*d_; }
     return out;
 }
 HEADER
-VEC VEC::operator/( const data_type & d_ ) {
+VEC VEC::operator/( const data_type & d_ ) const {
     vec out;
     for(int i = 0; i < D; ++i ){ out.d[i] = d[i]/d_; }
     return out;
