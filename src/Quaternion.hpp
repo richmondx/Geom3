@@ -33,7 +33,6 @@
 
 
 #include "vec3.hpp"
-#include "Constants.hpp"
 
 class EulerAngles;
 
@@ -45,16 +44,17 @@ class EulerAngles;
  * and   v = vector component
  *
  */
+template<typename data_type = double>
 class Quaternion {
 public:
     
-    
+    typedef vec3<data_type> vec3;
     
     // Constructor
     Quaternion();
-    Quaternion( double roll, double pitch, double yaw ); // Assumes Euler Rotation Order of X -> Y -> Z
+    Quaternion( data_type roll, data_type pitch, data_type yaw ); // Assumes Euler Rotation Order of X -> Y -> Z
     Quaternion( const EulerAngles & angles ); // Assumes Euler Rotation Order of X -> Y -> Z
-    Quaternion( double angleRadians, const vec3 & axis );
+    Quaternion( data_type angleRadians, const vec3 & axis );
     
     // Method to rotate vector based on quaternion
     vec3 rotate( const vec3 & vec) const;
@@ -73,16 +73,16 @@ public:
     
     // get the angle the quaternion rotates
     // about the axis
-    double      getAmountRotated() const;
+    data_type      getAmountRotated() const;
     
     EulerAngles getEulerAngles() const;
     
     
     
     // get/set scalar/vector parts of quaternion
-    double      getScalarPart() const;
-    vec3        getVectorPart() const;
-    void        setScalarPart( double scalar );
+    data_type           getScalarPart() const;
+    const vec3 &        getVectorPart() const;
+    void        setScalarPart( data_type scalar );
     void        setVectorPart( const vec3 & vec );
     
     // get quaternion derivative based on
@@ -90,18 +90,18 @@ public:
     Quaternion  getDerivative( const vec3 & omega ) const;
     
     // Get Quaternion Magnitude
-    double      getMagnitude() const;
+    data_type      getMagnitude() const;
     
     // Math operators for Quaternion
     Quaternion  operator*( const Quaternion & q ) const;
     Quaternion  operator+( const Quaternion & q ) const;
     Quaternion  operator-( const Quaternion & q ) const;
-    Quaternion operator*( double c ) const; // scalar
-    Quaternion operator/( double c ) const; // scalar
+    Quaternion operator*( data_type c ) const; // scalar
+    Quaternion operator/( data_type c ) const; // scalar
     
     // Method to access components of quaternion
-    double      operator[](int index) const;
-    double &    operator[](int index);
+    data_type      operator[](int index) const;
+    data_type &    operator[](int index);
     
     // print quaternion value
     void print() const;
@@ -112,10 +112,12 @@ private:
     // q = s + v
     // where s is scalar part
     // and v is vector part
-    double s;
+    data_type s;
     vec3 v;
     
     
 };
+
+#include "Quaternion_Impl.hpp"
 
 #endif /* Quaternion_hpp */

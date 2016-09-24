@@ -1,8 +1,8 @@
 //
-//  EulerAngles.hpp
-//  Spektr
+//  vec3.hpp
+//  Geom3
 //
-//  Created by Christian J Howard on 4/29/16.
+//  Created by Christian J Howard on 9/24/16.
 //
 //  The MIT License (MIT)
 //    Copyright © 2016 Christian Howard. All rights reserved.
@@ -27,28 +27,38 @@
 //
 //
 
-#ifndef EulerAngles_hpp
-#define EulerAngles_hpp
+#ifndef vec3_h
+#define vec3_h
 
-#include <stdio.h>
-#include "vec3.hpp"
-typedef la::FastMat<double, 3, 3> mat3;
+#include "vec.hpp"
 
-
-class EulerAngles {
+template<typename data_type = double>
+class vec3 : public vec<3,data_type> {
 public:
+    typedef vec<3,data_type> parent;
     
-    // Assumes X->Y->Z rotation sequence
-    EulerAngles();
-    EulerAngles(double a1, double a2, double a3);
-    double & operator[](int i);
-    const double & operator[](int i) const;
-    mat3 getRotationMatrix() const;
-    vec3 operator*( const vec3 & input ) const;
+    vec3():parent(){}
     
-public:
-    double angles[3];
+    vec3( data_type x, data_type y, data_type z){
+        parent::d[0] = x;
+        parent::d[1] = y;
+        parent::d[2] = z;
+    }
+    
+    vec3 cross( const vec3 & v ) {
+        vec3 out;
+        out.d[0] = parent::d[1]*v.d[2] - parent::d[2]*v.d[1];
+        out.d[1] = parent::d[2]*v.d[0] - parent::d[0]*v.d[2];
+        out.d[2] = parent::d[0]*v.d[1] - parent::d[1]*v.d[0];
+        return out;
+    }
+    void cross( const vec3 & v, vec3 & output) {
+        output.d[0] = parent::d[1]*v.d[2] - parent::d[2]*v.d[1];
+        output.d[1] = parent::d[2]*v.d[0] - parent::d[0]*v.d[2];
+        output.d[2] = parent::d[0]*v.d[1] - parent::d[1]*v.d[0];
+        return output;
+    }
 };
 
 
-#endif /* EulerAngles_hpp */
+#endif /* vec3_h */
