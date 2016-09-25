@@ -81,7 +81,7 @@ Q  Q::getConjugate() const{
 HEADER
 Q  Q::getDerivative( const vec3 & omega ) const{
     Quaternion w;
-    w.s = 0; w.v = omega/2.0;
+    w.v = omega/2.0;
     return (*this)*w;
 }
 
@@ -138,7 +138,7 @@ HEADER
 Q  Q::operator+( const Quaternion & q ) const{
     Quaternion qn;
     qn.s = s + q.getScalarPart();
-    vec3 tmp = q.getVectorPart();
+    const vec3 & tmp = q.getVectorPart();
     qn.v[0] = v[0] + tmp[0];
     qn.v[1] = v[1] + tmp[1];
     qn.v[2] = v[2] + tmp[2];
@@ -150,7 +150,7 @@ HEADER
 Q  Q::operator-( const Quaternion & q ) const{
     Quaternion qn;
     qn.s = s - q.getScalarPart();
-    vec3 tmp = q.getVectorPart();
+    const vec3 & tmp = q.getVectorPart();
     qn.v[0] = v[0] - tmp[0];
     qn.v[1] = v[1] - tmp[1];
     qn.v[2] = v[2] - tmp[2];
