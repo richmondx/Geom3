@@ -47,14 +47,14 @@ public:
         d[2] = z;
     }
     
-    vec cross( const vec & v ) {
+    vec cross( const vec & v ) const {
         vec out;
         out.d[0] = d[1]*v.d[2] - d[2]*v.d[1];
         out.d[1] = d[2]*v.d[0] - d[0]*v.d[2];
         out.d[2] = d[0]*v.d[1] - d[1]*v.d[0];
         return out;
     }
-    void cross( const vec & v, vec & output) {
+    void cross( const vec & v, vec & output) const {
         output.d[0] = d[1]*v.d[2] - d[2]*v.d[1];
         output.d[1] = d[2]*v.d[0] - d[0]*v.d[2];
         output.d[2] = d[0]*v.d[1] - d[1]*v.d[0];

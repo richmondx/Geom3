@@ -34,9 +34,7 @@ VEC::vec(){
 HEADER
 typename VEC::data_type VEC::dot( const vec & v ) const {
     data_type out = data_type();
-    for(int i = 0; i < D; ++i ){
-        out += d[i]*v.d[i];
-    }
+    for(int i = 0; i < D; ++i ){ out += d[i]*v.d[i]; }
     return out;
 }
 HEADER
@@ -46,9 +44,7 @@ typename VEC::data_type VEC::magnitude() const {
 HEADER
 typename VEC::data_type VEC::magnitudeSquared() const {
     data_type out = data_type();
-    for(int i = 0; i < D; ++i ){
-        out += d[i]*d[i];
-    }
+    for(int i = 0; i < D; ++i ){ out += d[i]*d[i]; }
     return out;
 }
 HEADER
@@ -73,7 +69,7 @@ void VEC::operator=( const data_type & s ) {
 HEADER
 VEC VEC::operator+( const vec & v ) const{
     vec out;
-    for(int i = 0; i < D; ++i ){ out.d[i] = d[i]+v.d[i]; }
+    for(int i = 0; i < D; ++i ){ out.d[i] = d[i] + v.d[i]; }
     return out;
 }
 HEADER

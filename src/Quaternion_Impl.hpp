@@ -55,9 +55,9 @@ Q::Quaternion( data_type angle, const vec3 & axis ){
 }
 
 HEADER
-typename Q::vec3 Q::rotate( const vec3 & vec) const{
+typename Q::vec3 Q::rotate( const vec3 & v_) const{
     Quaternion P;
-    P.v = vec;
+    P.v = v_;
     Quaternion q = (*this) * P * (*this).getInverse();
     return q.getVectorPart();
 }
@@ -82,7 +82,6 @@ HEADER
 Q  Q::getDerivative( const vec3 & omega ) const{
     Quaternion w;
     w.s = 0; w.v = omega/2.0;
-    
     return (*this)*w;
 }
 
@@ -123,8 +122,8 @@ void        Q::normalize(){
 
 HEADER
 Q  Q::operator*( const Quaternion & q ) const{
-    data_type s2 = q.getScalarPart();
-    vec3 v2 = q.getVectorPart();
+    data_type s2    = q.getScalarPart();
+    const vec3 & v2 = q.getVectorPart();
     data_type sn = s*s2 - v.dot(v2);
     vec3 cv = v.cross(v2);
     Quaternion out;

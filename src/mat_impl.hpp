@@ -40,7 +40,7 @@
 HEADER
 MAT::mat() {
     data_type zero = data_type();
-    for(int i =0; i < N; ++i){ d[i] = zero; }
+    for(int i = 0; i < N; ++i){ d[i] = zero; }
 }
 
 HEADER
